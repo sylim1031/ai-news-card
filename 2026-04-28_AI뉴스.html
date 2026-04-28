@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>AI 뉴스 카드 — 2026년 04월 28일</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+
+body {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #13072e 55%, #1a0533 100%);
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ── 페이지 헤더 ── */
+.page-header {
+  text-align: center;
+  padding: 56px 24px 48px;
+  position: relative;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #6366f1 30%, #a855f7 70%, transparent 100%);
+  box-shadow: 0 0 16px rgba(99,102,241,0.55);
+}
+.header-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: rgba(99,102,241,0.85);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.page-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.75) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+.page-date {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+  margin-top: 8px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.page-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.35);
+  color: rgba(167,139,250,0.95);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-top: 16px;
+  box-shadow: 0 0 20px rgba(99,102,241,0.18);
+}
+
+/* ── 스트립 컨테이너 ── */
+.strips {
+  padding: 36px 16px 72px;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── 글라스모피즘 카드 ── */
+.strip {
+  position: relative;
+  background: linear-gradient(135deg,
+    rgba(99,102,241,0.07) 0%,
+    rgba(168,85,247,0.05) 100%
+  );
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 64px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.13);
+}
+
+.strip::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 24px 24px 0 0;
+}
+.strip::after {
+  content: '';
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 140px; height: 140px;
+  background: radial-gradient(circle, rgba(168,85,247,0.14) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── 스트립 헤더 ── */
+.strip-head {
+  position: relative;
+  z-index: 2;
+  padding: 18px 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.strip-head::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-a, #6366f1), var(--neon-b, #a855f7));
+  box-shadow: 0 0 14px var(--neon-glow, rgba(99,102,241,0.7));
+}
+
+.strip-num {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));
+  min-width: 48px;
+}
+.strip-info { flex: 1; min-width: 0; }
+.strip-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.5;
+  word-break: keep-all;
+}
+.strip-source {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.38);
+  margin-top: 4px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* ── 네온 구분선 패널 그리드 ── */
+.panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: linear-gradient(135deg,
+    rgba(99,102,241,0.55) 0%,
+    rgba(168,85,247,0.55) 100%
+  );
+  position: relative;
+  z-index: 2;
+}
+
+.panel {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.panel:nth-child(1) { background: rgba(10,12,35,0.92); }
+.panel:nth-child(2) { background: rgba(12,9,34,0.92); }
+.panel:nth-child(3) { background: rgba(9,11,38,0.92); }
+.panel:nth-child(4) { background: rgba(11,8,33,0.92); }
+
+/* ── 패널 이미지 영역 ── */
+.panel-img {
+  position: relative;
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(99,102,241,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+/* 다크 그라데이션 오버레이 — 텍스트 가독성 확보 */
+.panel-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(8,10,35,0.45) 0%,
+    rgba(20,8,50,0.28) 100%
+  );
+}
+
+/* ── 이미지 위 배지 그룹 ── */
+.panel-img-meta {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 2;
+}
+
+/* ── 번호 배지 (좌상단, 소형) ── */
+.panel-num-badge {
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  color: #fff;
+  padding: 3px 9px;
+  border-radius: 7px;
+  line-height: 1.4;
+  box-shadow: 0 2px 10px rgba(99,102,241,0.6), 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* ── 섹션 레이블 배지 ── */
+.panel-label {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0,0,0,0.52);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 7px;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* ── 텍스트 버블 ── */
+.bubble {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 10px 11px;
+  font-size: 0.74rem;
+  line-height: 1.78;
+  color: rgba(255,255,255,0.82);
+  font-weight: 500;
+  flex: 1;
+  word-break: keep-all;
+}
+
+/* ── 스트립 푸터 ── */
+.strip-foot {
+  position: relative;
+  z-index: 2;
+  padding: 13px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.18);
+}
+.strip-date {
+  font-size: 0.66rem;
+  color: rgba(255,255,255,0.22);
+  font-weight: 500;
+}
+
+/* ── 그라데이션 버튼 ── */
+.read-btn {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 9px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  min-height: 38px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 18px rgba(99,102,241,0.45);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+.read-btn:hover {
+  box-shadow: 0 4px 30px rgba(168,85,247,0.7), 0 0 0 1px rgba(168,85,247,0.45);
+  transform: translateY(-2px);
+}
+.read-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(99,102,241,0.4);
+}
+
+/* ── 페이지 푸터 ── */
+.page-footer {
+  text-align: center;
+  padding: 0 20px 56px;
+  font-size: 0.63rem;
+  color: rgba(255,255,255,0.18);
+  line-height: 2.5;
+}
+
+@media (min-width: 540px) {
+  .page-title { font-size: 2.8rem; }
+  .panel-img { height: 106px; }
+  .bubble { font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="header-eyebrow">Daily AI Intelligence</p>
+  <h1 class="page-title">AI DAILY NEWS</h1>
+  <p class="page-date">2026년 04월 28일</p>
+  <span class="page-badge">🤖 자동 수집 · AI 번역</span>
+</header>
+
+<main class="strips">
+
+  <!-- ── Story 1 ── -->
+  <article class="strip" style="--neon-a:#6366f1;--neon-b:#a855f7;--neon-glow:rgba(99,102,241,0.7)">
+    <div class="strip-head">
+      <span class="strip-num">#1</span>
+      <div class="strip-info">
+        <div class="strip-title">머스크 vs 알트만: AI 세기의 법정 대결</div>
+        <span class="strip-source">MIT Technology Review</span>
+      </div>
+    </div>
+
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">01</span>
+            <span class="panel-label">배경</span>
+          </div>
+        </div>
+        <div class="bubble">2026년 봄, AI 업계 최대의 법정 드라마가 시작됩니다. 일론 머스크와 샘 알트만, 두 AI 거인이 OpenAI의 미래를 놓고 법정에서 맞붙습니다!</div>
+      </div>
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">02</span>
+            <span class="panel-label">사건</span>
+          </div>
+        </div>
+        <div class="bubble">머스크: "비영리로 만든 OpenAI가 돈벌이 기계로 변질됐다!" 알트만: "AI 발전을 위한 투자는 불가피했습니다!"</div>
+      </div>
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">03</span>
+            <span class="panel-label">쟁점</span>
+          </div>
+        </div>
+        <div class="bubble">이 재판은 두 사람의 싸움이 아닙니다. 'AI 기업이 공익을 지켜야 하는가 vs. 이익을 추구해도 되는가' 업계 전체의 질문입니다.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">04</span>
+            <span class="panel-label">전망</span>
+          </div>
+        </div>
+        <div class="bubble">판결에 따라 OpenAI 구조와 AI 산업 전반의 규제 방향이 바뀔 수 있습니다. 세기의 재판, 결과에 주목하세요!</div>
+      </div>
+    </div>
+
+    <div class="strip-foot">
+      <span class="strip-date">2026.04.28</span>
+      <a class="read-btn" href="https://www.technologyreview.com/2026/04/28/1136479/the-download-musk-altman-openai-trial-ai-profit-problem/" target="_blank">원문 읽기 →</a>
+    </div>
+  </article>
+
+  <!-- ── Story 2 ── -->
+  <article class="strip" style="--neon-a:#06b6d4;--neon-b:#6366f1;--neon-glow:rgba(6,182,212,0.6)">
+    <div class="strip-head">
+      <span class="strip-num">#2</span>
+      <div class="strip-info">
+        <div class="strip-title">Otter AI: 회의 지옥에서 직장인을 구하라!</div>
+        <span class="strip-source">TechCrunch AI</span>
+      </div>
+    </div>
+
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">01</span>
+            <span class="panel-label">배경</span>
+          </div>
+        </div>
+        <div class="bubble">오늘도 회의가 10개?! 지친 직장인들의 구세주가 나타났습니다. AI 메모 도구 Otter가 강력한 신기능을 발표했습니다!</div>
+      </div>
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">02</span>
+            <span class="panel-label">사건</span>
+          </div>
+        </div>
+        <div class="bubble">Otter 신기능: 슬랙, 이메일, 구글 드라이브 등 기업 내 모든 도구를 하나의 검색창으로 통합! 정보를 찾는 시간이 확 줄어듭니다.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">03</span>
+            <span class="panel-label">핵심</span>
+          </div>
+        </div>
+        <div class="bubble">더 놀라운 점! 이제 회의에 직접 참석 안 해도 됩니다. AI가 대신 참여해서 내용을 자동 기록하는 Windows 앱도 함께 출시됐습니다.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">04</span>
+            <span class="panel-label">전망</span>
+          </div>
+        </div>
+        <div class="bubble">AI가 내 대신 회의에 가고, 요점만 알려주는 시대! 직장인의 꿈이 하나씩 현실이 되고 있습니다.</div>
+      </div>
+    </div>
+
+    <div class="strip-foot">
+      <span class="strip-date">2026.04.28</span>
+      <a class="read-btn" href="https://techcrunch.com/2026/04/28/otters-new-feature-lets-users-search-across-their-enterprise-tools/" target="_blank">원문 읽기 →</a>
+    </div>
+  </article>
+
+  <!-- ── Story 3 ── -->
+  <article class="strip" style="--neon-a:#f59e0b;--neon-b:#ef4444;--neon-glow:rgba(245,158,11,0.6)">
+    <div class="strip-head">
+      <span class="strip-num">#3</span>
+      <div class="strip-info">
+        <div class="strip-title">구글 × 미 국방부: 비밀 AI 계약의 진실</div>
+        <span class="strip-source">The Verge AI</span>
+      </div>
+    </div>
+
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">01</span>
+            <span class="panel-label">배경</span>
+          </div>
+        </div>
+        <div class="bubble">구글과 미국 국방부 사이에 기밀 AI 협약이 체결됐습니다. 이 계약의 존재가 외부에 알려지며 IT 업계 전체에 파장이 일었습니다.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">02</span>
+            <span class="panel-label">사건</span>
+          </div>
+        </div>
+        <div class="bubble">계약 내용: 미 국방부가 구글 AI를 '모든 합법적인 정부 목적'에 자유롭게 사용 가능. 단, 전체 내용은 기밀로 처리됐습니다.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">03</span>
+            <span class="panel-label">반발</span>
+          </div>
+        </div>
+        <div class="bubble">소식을 접한 구글 직원들이 즉각 반발! CEO 순다르 피차이에게 "우리 AI의 군사 활용을 막아달라"고 공개 요청했지만, 계약은 이미 완료됐습니다.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f665?auto=format&fit=crop&w=400&q=80')">
+          <div class="panel-img-meta">
+            <span class="panel-num-badge">04</span>
+            <span class="panel-label">전망</span>
+          </div>
+        </div>
+        <div class="bubble">AI의 군사·정부 활용이 본격화되는 새 시대. '기술 윤리 vs. 비즈니스' 갈등은 앞으로 더 심화될 전망입니다.</div>
+      </div>
+    </div>
+
+    <div class="strip-foot">
+      <span class="strip-date">2026.04.28</span>
+      <a class="read-btn" href="https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal" target="_blank">원문 읽기 →</a>
+    </div>
+  </article>
+
+</main>
+
+<footer class="page-footer">
+  자동 수집 및 AI 번역 &nbsp;|&nbsp; 출처: TechCrunch · VentureBeat · The Verge · MIT Technology Review · Wired
+</footer>
+
+</body>
+</html>
