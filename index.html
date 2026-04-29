@@ -18,19 +18,19 @@ body {
 }
 .page-header {
   text-align: center;
-  padding: 56px 24px 48px;
+  padding: 52px 24px 44px;
   position: relative;
 }
 .page-header::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 12%; right: 12%;
+  bottom: 0; left: 10%; right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, #6366f1 30%, #a855f7 70%, transparent 100%);
-  box-shadow: 0 0 16px rgba(99,102,241,0.55);
+  background: linear-gradient(90deg, transparent, #6366f1 30%, #a855f7 70%, transparent);
+  box-shadow: 0 0 18px rgba(99,102,241,0.55);
 }
 .header-eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 5px;
   color: rgba(99,102,241,0.85);
@@ -38,18 +38,18 @@ body {
   margin-bottom: 12px;
 }
 .page-title {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 900;
   letter-spacing: 4px;
-  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.75) 100%);
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.1;
 }
-.page-date {
+.page-subtitle {
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.38);
   margin-top: 8px;
   font-weight: 500;
 }
@@ -58,220 +58,226 @@ body {
   align-items: center;
   gap: 6px;
   background: rgba(99,102,241,0.1);
-  border: 1px solid rgba(99,102,241,0.35);
-  color: rgba(167,139,250,0.95);
+  border: 1px solid rgba(99,102,241,0.3);
+  color: rgba(167,139,250,0.9);
   padding: 5px 16px;
   border-radius: 20px;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  margin-top: 16px;
-  box-shadow: 0 0 20px rgba(99,102,241,0.18);
+  margin-top: 14px;
+  box-shadow: 0 0 18px rgba(99,102,241,0.15);
 }
-.strips {
-  padding: 36px 16px 72px;
-  max-width: 520px;
+.cards {
+  padding: 36px 16px 80px;
+  max-width: 480px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 36px;
 }
-.strip {
+.card {
   position: relative;
-  background: linear-gradient(135deg, rgba(99,102,241,0.07) 0%, rgba(168,85,247,0.05) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: linear-gradient(160deg, rgba(13,15,40,0.97) 0%, rgba(22,10,48,0.97) 100%);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.13);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
 }
-.strip::before {
+.card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 48%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 1;
-  border-radius: 24px 24px 0 0;
-}
-.strip::after {
-  content: '';
-  position: absolute;
-  top: -20px; right: -20px;
-  width: 140px; height: 140px;
-  background: radial-gradient(circle, rgba(168,85,247,0.14) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 1;
-}
-.strip-head {
-  position: relative;
-  z-index: 2;
-  padding: 18px 20px 16px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-.strip-head::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(90deg, var(--neon-a, #6366f1), var(--neon-b, #a855f7));
-  box-shadow: 0 0 14px var(--neon-glow, rgba(99,102,241,0.7));
+  box-shadow: 0 0 20px var(--neon-glow, rgba(99,102,241,0.7));
+  z-index: 3;
 }
-.strip-num {
-  font-size: 2.8rem;
-  font-weight: 900;
-  line-height: 1;
-  background: linear-gradient(135deg, #6366f1, #a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 10px rgba(99,102,241,0.5));
-  min-width: 48px;
-}
-.strip-info { flex: 1; min-width: 0; }
-.strip-title {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.92);
-  line-height: 1.5;
-  word-break: keep-all;
-}
-.strip-source {
-  display: inline-block;
-  font-size: 0.58rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.38);
-  margin-top: 4px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-}
-.panels {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: linear-gradient(135deg, rgba(99,102,241,0.55) 0%, rgba(168,85,247,0.55) 100%);
-  position: relative;
-  z-index: 2;
-}
-.panel {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.panel:nth-child(1) { background: rgba(10,12,35,0.92); }
-.panel:nth-child(2) { background: rgba(12,9,34,0.92); }
-.panel:nth-child(3) { background: rgba(9,11,38,0.92); }
-.panel:nth-child(4) { background: rgba(11,8,33,0.92); }
-.panel-img {
-  position: relative;
-  height: 90px;
-  background-size: cover;
-  background-position: center;
-  background-color: rgba(99,102,241,0.15);
-  border-radius: 10px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.panel-img::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, rgba(8,10,35,0.45) 0%, rgba(20,8,50,0.28) 100%);
-}
-.panel-img-meta {
-  position: absolute;
-  top: 7px;
-  left: 7px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  z-index: 2;
-}
-.panel-num-badge {
-  font-size: 0.62rem;
-  font-weight: 900;
-  letter-spacing: 0.8px;
-  background: linear-gradient(90deg, #6366f1, #a855f7);
-  color: #fff;
-  padding: 3px 9px;
-  border-radius: 7px;
-  line-height: 1.4;
-  box-shadow: 0 2px 10px rgba(99,102,241,0.6), 0 1px 3px rgba(0,0,0,0.5);
-}
-.panel-label {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(0,0,0,0.52);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: rgba(255,255,255,0.9);
-  font-size: 0.6rem;
-  font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 7px;
-  letter-spacing: 0.3px;
-  line-height: 1.4;
-  border: 1px solid rgba(255,255,255,0.18);
-}
-.bubble {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
-  padding: 10px 11px;
-  font-size: 0.74rem;
-  line-height: 1.78;
-  color: rgba(255,255,255,0.82);
-  font-weight: 500;
-  flex: 1;
-  word-break: keep-all;
-}
-.strip-foot {
-  position: relative;
-  z-index: 2;
-  padding: 13px 20px;
+.card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  background: rgba(0,0,0,0.18);
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.strip-date { font-size: 0.66rem; color: rgba(255,255,255,0.22); font-weight: 500; }
-.read-btn {
+.source-badge {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(90deg, #6366f1, #a855f7);
-  color: #fff;
-  font-size: 0.78rem;
+  gap: 7px;
+  font-size: 0.6rem;
   font-weight: 700;
-  padding: 9px 22px;
-  border-radius: 30px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.source-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon-a, #6366f1), var(--neon-b, #a855f7));
+  box-shadow: 0 0 8px var(--neon-glow, rgba(99,102,241,0.7));
+  flex-shrink: 0;
+}
+.card-date {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.22);
+  font-weight: 500;
+}
+.card-image {
+  position: relative;
+  height: 210px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(30,20,60,0.8);
+}
+.card-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, transparent, rgba(13,15,40,0.97));
+}
+.card-num {
+  position: absolute;
+  top: 14px; left: 14px;
+  z-index: 2;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, var(--neon-a, #6366f1), var(--neon-b, #a855f7));
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 9px;
+  box-shadow: 0 2px 14px var(--neon-glow, rgba(99,102,241,0.6));
+}
+.card-body {
+  padding: 20px 20px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.card-title {
+  font-size: 1.22rem;
+  font-weight: 900;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.97);
+  word-break: keep-all;
+}
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent);
+  margin: -4px 0;
+}
+.section { display: flex; flex-direction: column; gap: 10px; }
+.section-label { display: flex; align-items: center; gap: 7px; }
+.section-icon { font-size: 1rem; line-height: 1; }
+.section-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--neon-a, #6366f1), var(--neon-b, #a855f7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.summary-box {
+  position: relative;
+  background: linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(168,85,247,0.07) 100%);
+  border: 1px solid rgba(99,102,241,0.25);
+  border-radius: 14px;
+  padding: 14px 16px 14px 20px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.93);
+  line-height: 1.65;
+  word-break: keep-all;
+}
+.summary-box::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px; bottom: 10px;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--neon-a, #6366f1), var(--neon-b, #a855f7));
+  border-radius: 2px;
+}
+.easy-text {
+  font-size: 0.83rem;
+  line-height: 1.95;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+  word-break: keep-all;
+}
+.work-list {
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.work-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 13px 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.2s;
+}
+.work-item:last-child { border-bottom: none; }
+.work-item:hover { background: rgba(99,102,241,0.07); }
+.work-num {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--neon-a, #6366f1), var(--neon-b, #a855f7));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 900;
+  color: #fff;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px var(--neon-glow, rgba(99,102,241,0.4));
+}
+.work-text {
+  font-size: 0.8rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+  word-break: keep-all;
+}
+.card-footer { padding: 20px; }
+.read-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--neon-a, #6366f1), var(--neon-b, #a855f7));
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 16px;
   text-decoration: none;
-  min-height: 38px;
-  letter-spacing: 0.3px;
-  box-shadow: 0 4px 18px rgba(99,102,241,0.45);
-  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 22px var(--neon-glow, rgba(99,102,241,0.4));
+  transition: box-shadow 0.25s, transform 0.2s;
 }
 .read-btn:hover {
-  box-shadow: 0 4px 30px rgba(168,85,247,0.7), 0 0 0 1px rgba(168,85,247,0.45);
+  box-shadow: 0 6px 32px var(--neon-glow, rgba(99,102,241,0.65));
   transform: translateY(-2px);
 }
-.read-btn:active { transform: translateY(0); box-shadow: 0 2px 10px rgba(99,102,241,0.4); }
+.read-btn:active { transform: translateY(0); }
 .page-footer {
   text-align: center;
-  padding: 0 20px 56px;
-  font-size: 0.63rem;
-  color: rgba(255,255,255,0.18);
-  line-height: 2.5;
+  padding: 0 20px 60px;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.15);
+  line-height: 2.8;
 }
-@media (min-width: 540px) {
-  .page-title { font-size: 2.8rem; }
-  .panel-img { height: 106px; }
-  .bubble { font-size: 0.8rem; }
+@media (min-width: 480px) {
+  .page-title  { font-size: 2.6rem; }
+  .card-title  { font-size: 1.32rem; }
+  .easy-text   { font-size: 0.86rem; }
+  .work-text   { font-size: 0.83rem; }
+  .summary-box { font-size: 0.92rem; }
 }
 </style>
 </head>
@@ -280,163 +286,187 @@ body {
 <header class="page-header">
   <p class="header-eyebrow">Daily AI Intelligence</p>
   <h1 class="page-title">AI DAILY NEWS</h1>
-  <p class="page-date">2026년 04월 29일</p>
+  <p class="page-subtitle">2026년 04월 29일</p>
   <span class="page-badge">🤖 자동 수집 · AI 번역</span>
 </header>
 
-<main class="strips">
+<main class="cards">
 
-  <article class="strip" style="--neon-a:#94a3b8;--neon-b:#6366f1;--neon-glow:rgba(148,163,184,0.5)">
-    <div class="strip-head">
-      <span class="strip-num">#1</span>
-      <div class="strip-info">
-        <div class="strip-title">OpenAI는 Codex가 고블린에 대해 입을 다물기를 정말로 원합니다.</div>
-        <span class="strip-source">Wired AI</span>
+  <article class="card" style="--neon-a:#06b6d4;--neon-b:#6366f1;--neon-glow:rgba(6,182,212,0.6)">
+    <div class="card-header">
+      <div class="source-badge">
+        <span class="source-dot"></span>
+        TechCrunch AI
+      </div>
+      <span class="card-date">2026.04.29</span>
+    </div>
+
+    <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80')">
+      <span class="card-num"># 01</span>
+    </div>
+
+    <div class="card-body">
+      <h2 class="card-title">OpenAI 재판에서 머스크는 오랜 우정을 되새깁니다.</h2>
+      <div class="divider"></div>
+
+      <div class="section">
+        <div class="section-label">
+          <span class="section-icon">💡</span>
+          <span class="section-title">이 뉴스 한마디로?</span>
+        </div>
+        <div class="summary-box">이는 머스크가 이전에 인터뷰에서 그리고 베스트셀러 머스크 전기의 저자인 월터 아이작슨에게 했던 이야기이지만, 그가 선서를 한 것은 화요일이 처음이었습니다.</div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">
+          <span class="section-icon">📖</span>
+          <span class="section-title">쉬운 설명</span>
+        </div>
+        <p class="easy-text">이는 머스크가 이전에 인터뷰에서 그리고 베스트셀러 머스크 전기의 저자인 월터 아이작슨에게 했던 이야기이지만, 그가 선서를 한 것은 화요일이 처음이었습니다.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-label">
+          <span class="section-icon">💼</span>
+          <span class="section-title">우리 업무에서는?</span>
+        </div>
+        <div class="work-list">
+          <div class="work-item">
+            <span class="work-num">1</span>
+            <span class="work-text">관련 AI 도구를 팀에 소개하고 도입 가능성을 검토해보세요.</span>
+          </div>
+          <div class="work-item">
+            <span class="work-num">2</span>
+            <span class="work-text">업무 자동화가 가능한 반복 작업을 리스트업 해보세요.</span>
+          </div>
+          <div class="work-item">
+            <span class="work-num">3</span>
+            <span class="work-text">이 기술 트렌드를 팀장이나 동료에게 공유해보세요.</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="panels">
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">01</span>
-            <span class="panel-label">배경</span>
-          </div>
-        </div>
-        <div class="bubble">OpenAI의 코딩 에이전트 지침에는 "절대적이고</div>
+
+    <div class="card-footer">
+      <a class="read-btn" href="https://techcrunch.com/2026/04/28/at-his-openai-trial-musk-relitigates-an-old-friendship/" target="_blank">원문 읽기 →</a>
+    </div>
+  </article>
+  <article class="card" style="--neon-a:#94a3b8;--neon-b:#6366f1;--neon-glow:rgba(148,163,184,0.5)">
+    <div class="card-header">
+      <div class="source-badge">
+        <span class="source-dot"></span>
+        Wired AI
       </div>
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">02</span>
-            <span class="panel-label">사건</span>
-          </div>
+      <span class="card-date">2026.04.28</span>
+    </div>
+
+    <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80')">
+      <span class="card-num"># 02</span>
+    </div>
+
+    <div class="card-body">
+      <h2 class="card-title">OpenAI는 Codex가 고블린에 대해 입을 다물기를 정말로 원합니다.</h2>
+      <div class="divider"></div>
+
+      <div class="section">
+        <div class="section-label">
+          <span class="section-icon">💡</span>
+          <span class="section-title">이 뉴스 한마디로?</span>
         </div>
-        <div class="bubble">명확하게 관련되지 않는 한 고블린, 그렘린, 너구리</div>
+        <div class="summary-box">OpenAI의 코딩 에이전트 지침에는 "절대적이고 명확하게 관련되지 않는 한 고블린, 그렘린, 너구리, 트롤, 오우거, 비둘기 또는 기타 동물이나 생물에 대해...</div>
       </div>
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">03</span>
-            <span class="panel-label">분석</span>
-          </div>
+
+      <div class="section">
+        <div class="section-label">
+          <span class="section-icon">📖</span>
+          <span class="section-title">쉬운 설명</span>
         </div>
-        <div class="bubble">, 트롤, 오우거, 비둘기 또는 기타 동물이나 생물</div>
+        <p class="easy-text">OpenAI의 코딩 에이전트 지침에는 "절대적이고 명확하게 관련되지 않는 한 고블린, 그렘린, 너구리, 트롤, 오우거, 비둘기 또는 기타 동물이나 생물에 대해 이야기하지 마십시오."라고 나와 있습니다.</p>
       </div>
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">04</span>
-            <span class="panel-label">전망</span>
+
+      <div class="section">
+        <div class="section-label">
+          <span class="section-icon">💼</span>
+          <span class="section-title">우리 업무에서는?</span>
+        </div>
+        <div class="work-list">
+          <div class="work-item">
+            <span class="work-num">1</span>
+            <span class="work-text">AI 기술이 우리 조직 문화에 어떤 영향을 줄지 팀원과 토론해보세요.</span>
+          </div>
+          <div class="work-item">
+            <span class="work-num">2</span>
+            <span class="work-text">중장기 AI 도입 로드맵을 간단하게라도 작성해보세요.</span>
+          </div>
+          <div class="work-item">
+            <span class="work-num">3</span>
+            <span class="work-text">관련 업계 뉴스레터나 커뮤니티에 가입해 최신 동향을 파악하세요.</span>
           </div>
         </div>
-        <div class="bubble">에 대해 이야기하지 마십시오."라고 나와 있습니다.</div>
       </div>
     </div>
-    <div class="strip-foot">
-      <span class="strip-date">2026.04.28</span>
+
+    <div class="card-footer">
       <a class="read-btn" href="https://www.wired.com/story/openai-really-wants-codex-to-shut-up-about-goblins/" target="_blank">원문 읽기 →</a>
     </div>
   </article>
-  <article class="strip" style="--neon-a:#f59e0b;--neon-b:#ef4444;--neon-glow:rgba(245,158,11,0.6)">
-    <div class="strip-head">
-      <span class="strip-num">#2</span>
-      <div class="strip-info">
-        <div class="strip-title">Elon Musk는 준비된 것보다 더 사소해 보였습니다.</div>
-        <span class="strip-source">The Verge AI</span>
+  <article class="card" style="--neon-a:#f59e0b;--neon-b:#ef4444;--neon-glow:rgba(245,158,11,0.55)">
+    <div class="card-header">
+      <div class="source-badge">
+        <span class="source-dot"></span>
+        The Verge AI
+      </div>
+      <span class="card-date">2026.04.28</span>
+    </div>
+
+    <div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f665?auto=format&fit=crop&w=800&q=80')">
+      <span class="card-num"># 03</span>
+    </div>
+
+    <div class="card-body">
+      <h2 class="card-title">Elon Musk는 준비된 것보다 더 사소해 보였습니다.</h2>
+      <div class="divider"></div>
+
+      <div class="section">
+        <div class="section-label">
+          <span class="section-icon">💡</span>
+          <span class="section-title">이 뉴스 한마디로?</span>
+        </div>
+        <div class="summary-box">오늘 머스크 대 알트만(Musk v.</div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">
+          <span class="section-icon">📖</span>
+          <span class="section-title">쉬운 설명</span>
+        </div>
+        <p class="easy-text">오늘 머스크 대 알트만(Musk v. Altman) 사건에서 첫 번째 증인은 엘론 머스크(Elon Musk)입니다. 나는 그가 너무 밋밋해 보여서 놀랐다. 머스크를 법정에서 본 것은 이번이 처음이 아니다. 명예훼손 소송에서 그는 매력을 발산했고 배심원들은 그에게 무죄 판결을 내렸다. 오늘 그는 표류하는 것처럼 보였고 [...]</p>
+      </div>
+
+      <div class="section">
+        <div class="section-label">
+          <span class="section-icon">💼</span>
+          <span class="section-title">우리 업무에서는?</span>
+        </div>
+        <div class="work-list">
+          <div class="work-item">
+            <span class="work-num">1</span>
+            <span class="work-text">AI 도구 선택 시 정책과 보안 조항을 꼼꼼히 확인하세요.</span>
+          </div>
+          <div class="work-item">
+            <span class="work-num">2</span>
+            <span class="work-text">팀 내 AI 활용 가이드라인을 미리 수립해두면 좋습니다.</span>
+          </div>
+          <div class="work-item">
+            <span class="work-num">3</span>
+            <span class="work-text">관련 기술 동향을 정기적으로 모니터링하는 채널을 만들어보세요.</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="panels">
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">01</span>
-            <span class="panel-label">배경</span>
-          </div>
-        </div>
-        <div class="bubble">오늘 머스크 대 알트만(Musk v. Altman) 사건에서 첫 번째 증인은 엘론</div>
-      </div>
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">02</span>
-            <span class="panel-label">사건</span>
-          </div>
-        </div>
-        <div class="bubble">머스크(Elon Musk)입니다. 나는 그가 너무 밋밋해 보여서 놀랐다.</div>
-      </div>
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">03</span>
-            <span class="panel-label">분석</span>
-          </div>
-        </div>
-        <div class="bubble">머스크를 법정에서 본 것은 이번이 처음이 아니다. 명예훼손 소송에서 그는 매력을 발산했고</div>
-      </div>
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f665?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">04</span>
-            <span class="panel-label">전망</span>
-          </div>
-        </div>
-        <div class="bubble">배심원들은 그에게 무죄 판결을 내렸다. 오늘 그는 표류하는 것처럼 보였고 [...]</div>
-      </div>
-    </div>
-    <div class="strip-foot">
-      <span class="strip-date">2026.04.28</span>
+
+    <div class="card-footer">
       <a class="read-btn" href="https://www.theverge.com/ai-artificial-intelligence/920191/elon-musk-sam-altman-trial-day-one" target="_blank">원문 읽기 →</a>
-    </div>
-  </article>
-  <article class="strip" style="--neon-a:#94a3b8;--neon-b:#6366f1;--neon-glow:rgba(148,163,184,0.5)">
-    <div class="strip-head">
-      <span class="strip-num">#3</span>
-      <div class="strip-info">
-        <div class="strip-title">엘론 머스크, '터미네이터의 결과'를 막기 위해 OpenAI를 시작했다고 증언</div>
-        <span class="strip-source">Wired AI</span>
-      </div>
-    </div>
-    <div class="panels">
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">01</span>
-            <span class="panel-label">배경</span>
-          </div>
-        </div>
-        <div class="bubble">판사는 또한 양측이 온라인에서 공격을 주고</div>
-      </div>
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">02</span>
-            <span class="panel-label">사건</span>
-          </div>
-        </div>
-        <div class="bubble">받은 후 머스크와 샘 알트만에게 “법정 밖</div>
-      </div>
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">03</span>
-            <span class="panel-label">분석</span>
-          </div>
-        </div>
-        <div class="bubble">에서 상황을 악화시키기 위해 소셜 미디어를</div>
-      </div>
-      <div class="panel">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80')">
-          <div class="panel-img-meta">
-            <span class="panel-num-badge">04</span>
-            <span class="panel-label">전망</span>
-          </div>
-        </div>
-        <div class="bubble">사용하는 경향”을 억제하라고 경고했습니다.</div>
-      </div>
-    </div>
-    <div class="strip-foot">
-      <span class="strip-date">2026.04.28</span>
-      <a class="read-btn" href="https://www.wired.com/story/model-behavior-elon-musk-testifies-at-musk-v-altman-trial/" target="_blank">원문 읽기 →</a>
     </div>
   </article>
 </main>
